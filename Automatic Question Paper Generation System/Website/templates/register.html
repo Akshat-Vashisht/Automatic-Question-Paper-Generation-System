@@ -1,0 +1,39 @@
+{% extends "base.html"%}
+{% block title%}Register{% endblock %}
+{%block content%}
+<form method="POST">
+    <style>
+        h2 {
+            text-align: center;
+        }
+    </style>
+    <h2>Register</h2>
+    <div class="form-group">
+        <strong>
+            <label for="name">Name</label>
+        </strong>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" />
+    </div>
+    <div class="form-group">
+        <strong>
+            <label for="email">Email Address</label>
+        </strong>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" />
+    </div>
+    <div class="form-group">
+        <strong>
+            <label for="password1">Password</label>
+        </strong>
+        <input type="password" class="form-control" id="password1" name="password1" placeholder="Enter password" />
+    </div>
+    <div class="form-group">
+        <strong>
+            <label for="password2">Confirm Password</label>
+        </strong>
+        <input type="password" class="form-control" id="password2" name="password2" placeholder="Confirm password" />
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary">Register</button>
+    <button type="reset" class="btn btn-primary">Reset</button>
+</form>
+{%endblock%}
