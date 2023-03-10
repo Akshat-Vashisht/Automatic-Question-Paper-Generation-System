@@ -1,5 +1,8 @@
 from flask import Blueprint, render_template
 from flask_login import login_required, current_user
+from flask import Flask, request, render_template
+from werkzeug.utils import secure_filename
+import os
 
 views = Blueprint("views", __name__)
 
@@ -8,3 +11,15 @@ views = Blueprint("views", __name__)
 @login_required
 def home():
     return render_template("home.html", user=current_user)
+
+
+@views.route("/question_paper")
+@login_required
+def question_paper():
+    return render_template("question_paper.html")
+
+
+@views.route("/download_excel")
+@login_required
+def download_excel():
+    return render_template("download_excel.html")

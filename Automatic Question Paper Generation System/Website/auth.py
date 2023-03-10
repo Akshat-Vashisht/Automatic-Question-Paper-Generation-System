@@ -17,7 +17,7 @@ def login():
             flash("Field can not be empty", category="Validation failed")
         elif user:
             if check_password_hash(user.password, password):
-                flash("Log in successfull", category="Validation passed")
+                flash("Login successful", category="Validation passed")
                 login_user(user, remember=True)
                 return redirect(url_for("views.home"))
             else:
@@ -68,7 +68,7 @@ def register():
                            password=generate_password_hash(password1, method="sha256"))
             db.session.add(newUser)
             db.session.commit()
-            login_user(user, remember=True)
+            login_user(newUser, remember=True)
             flash("Account successfully created",
                   category="Validation passed")
             return redirect(url_for("views.home"))

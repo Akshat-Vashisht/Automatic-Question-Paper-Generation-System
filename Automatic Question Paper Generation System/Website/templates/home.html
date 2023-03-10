@@ -1,5 +1,170 @@
-{% extends "base.html"%}
-{% block title%}Home page{% endblock %}
+{%extends "navbar.html"%}
 {%block content%}
-<h1>This will be the home page of our app</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Home</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="static/styles.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Header-->
+    <header class="bg-dark py-5">
+        <div class="container px-5">
+            <div class="row gx-5 justify-content-center">
+                <div class="col-lg-6">
+                    <div class="text-center my-5">
+                        <h1 class="display-5 fw-bolder text-white mb-2">No more manual setting of question paper</h1>
+                        <p class="lead text-white-50 mb-4">Quickly create a fair and effective question paper in one
+                            click. All you need to give us is just an excel file</p>
+                        <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+                            <a class="btn btn-outline-light btn-lg px-4" href="/question_paper">Get Started</a>
+                            <a class="btn btn-outline-light btn-lg px-4" href="#steps">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Features section-->
+    <section class="py-5 border-bottom" id="steps">
+        <div class="text-center mb-5">
+            <h1 class="display-5 fw-bolder text-black my-2">Generate in 3 easy steps</h1>
+        </div>
+        <div class="container px-5">
+            <div class="row gx-5">
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3">
+                        <i class="bi bi-file-earmark-excel"></i>
+                    </div>
+                    <h2 class="h4 fw-bolder">Simple uploading</h2>
+                    <p>Download a simple excel format and fill it with the questions and the constratints.
+                        We will take care of the rest.
+                    </p>
+                </div>
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i
+                            class="bi bi-check2-square"></i>
+                    </div>
+                    <h2 class="h4 fw-bolder">Constraints on questions</h2>
+                    <p>You can provide us the constraints that you want to set on your question paper
+                        such as marks per question, bloom's taxonomy, difficulty level, etc.
+                    </p>
+                </div>
+                <div class="col-lg-4">
+                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i
+                            class="bi bi-arrow-bar-down"></i>
+                    </div>
+                    <h2 class="h4 fw-bolder">Download the question paper</h2>
+                    <p>After finishing all the steps, sit back and relax! Let us take care of the rest, simply download
+                        the generated file or regenerate it after making desired changes</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 border-bottom" id="team">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase mt- 0  pb-2">Meet our developers</h2>
+                <h3 class="section-subheading text-muted pb-4">B.Tech. IT SY DA</h3>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="team-member">
+                        <img class="mx-auto rounded-circle" style=" width: 200px; height: 200px" ; src="
+                            static/Purvika.jpg" />
+                        <h4>Purvika Gore</h4>
+                        <p class="text-muted">2215028</p>
+                        <a class="btn btn-dark btn-social mx-2" href="https://www.instagram.com/purvika__._/"
+                            aria-label="Purvika Gore Instagram" target="_blank"><i class="bi bi-instagram"
+                                style="font-size: 20px;"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="team-member">
+                        <img class="mx-auto rounded-circle" style=" width: 200px; height: 200px;"
+                            src="static/Sonam.jpg" />
+                        <h4>Sonam Bhul</h4>
+                        <p class="text-muted">2215064</p>
+                        <a class="btn btn-dark btn-social mx-2" href="https://www.instagram.com/sonam_bhule/"
+                            aria-label="Sonam Bhul Instagram" target="_blank"><i class="bi bi-instagram"
+                                style="font-size: 20px;"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="team-member">
+                        <img class="mx-auto rounded-circle" style=" width: 200px; height: 200px;"
+                            src="static/Juhi.jpg" />
+                        <h4>Juhi Shah</h4>
+                        <p class="text-muted">2215014</p>
+                        <a class="btn btn-dark btn-social mx-2" href="https://www.instagram.com/juhi.__.shah/"
+                            aria-label="Juhi Shah Instagram" target="_blank"><i class="bi bi-instagram"
+                                style="font-size: 20px;"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 mx-auto">
+                    <div class="team-member">
+                        <img class="mx-auto rounded-circle" style=" width: 200px; height: 200px;"
+                            src="static/Akshat.jpg" />
+                        <h4>Akshat Vashisht</h4>
+                        <p class="text-muted">2215018</p>
+                        <a class="btn btn-dark btn-social mx-2" href="https://www.instagram.com/akshat.vashisht011/"
+                            aria-label="Akshat Vashisht Instagram" target="_blank"><i class="bi bi-instagram"
+                                style="font-size: 20px;"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4  mx-auto">
+                    <div class="team-member">
+                        <img class="mx-auto rounded-circle" style=" width: 200px; height: 200px;"
+                            src="static/Jyoti.jpg" />
+                        <h4>Prof. Jyoti Nandimath</h4>
+                        <p class="text-muted">Project guide </p>
+                        <a class="btn btn-dark btn-social mx-2" href="https://www.instagram.com/jyonandimath/"
+                            aria-label="Jyoti Nandimath Instagram" target="_blank"><i class="bi bi-instagram"
+                                style="font-size: 20px;"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <p class="large text-muted">
+                        Meet our talented team of developers who are passionate about creating an exceptional projects
+                        to bring about a change in the educational system
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer-->
+    <footer class="py-5 bg-dark">
+        <div class="container px-5">
+            <p class="m-0 text-center text-white">Copyright &copy; Automatic Question Paper Generation System 2023</p>
+        </div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <!-- * *                               SB Forms JS                               * *-->
+    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+</body>
+
+</html>
 {%endblock%}
