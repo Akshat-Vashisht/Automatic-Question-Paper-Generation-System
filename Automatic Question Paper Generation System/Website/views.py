@@ -13,13 +13,7 @@ def home():
     return render_template("home.html", user=current_user)
 
 
-@views.route("/question_paper")
+@views.route("/instructions")
 @login_required
 def question_paper():
-    return render_template("question_paper.html")
-
-
-@views.route("/download_excel")
-@login_required
-def download_excel():
-    return render_template("download_excel.html")
+    return render_template("instructions.html", user=current_user)
