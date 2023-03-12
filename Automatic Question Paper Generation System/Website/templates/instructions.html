@@ -60,9 +60,11 @@
         <!-- Sidebar-->
         <div class="border-end bg-white pt-5 mt-3" id="sidebar-wrapper">
             <div class="list-group list-group-flush">
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#">General
+                <a class="list-group-item list-group-item-action list-group-item-light p-3"
+                    href="#General Instructions">General
                     Instructions</a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#">Download Excel</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#download">Download
+                    Excel</a>
                 <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#">Add
                     constraints</a>
                 <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#">Preview</a>
@@ -71,7 +73,7 @@
         <!-- Page content wrapper-->
         <div id="page-content-wrapper">
             <!-- Page content-->
-            <div class="container-fluid">
+            <div class="container-fluid" id="General Instructions">
                 <h1 class=" mt-5 pt-3">General Instructions</h1>
 
                 <p>Greetings {{user.name}}, here are a few things to keep in mind before you get started with the
@@ -112,46 +114,43 @@
                     <a>Valid values: "Easy", "Medium" and "Hard" </a>
                 </i>
                 </p>
+                4. Bloom's Taxonomy
+                <br>
+                <i class="bi bi-x ">
+                    <A>Invalid values: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure, quia?.</A>
+                </i>
+                <i class="bi bi-check2">
+                    <a>Valid values: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, ullam.</a>
+                </i>
+                </p>
 
             </div>
             <div class="container-fluid" id="download">
                 <h1 class=" mt-5 pt-3">Download Excel</h1>
 
-                <p>The starting state of the menu will appear collapsed on smaller screens, and will appear
-                    non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
+                <p>Download the excel sheet format by clicking on the button given below</p>
                 <p>
-                    Make sure to keep all page content within the
-                    <code>#page-content-wrapper</code>
-                    . The top navbar is optional, and just for demonstration. Just create an element with the
-                    <code>#sidebarToggle</code>
-                    ID which will toggle the menu when clicked.
+                    <button class="btn btn-outline-dark btn-sm">
+                        <a href="https://docs.google.com/spreadsheets/d/1OSex3BU6D3WxizXHyVaMp_r7fUNPTpZ_dA1YIgPpHiA/edit?usp=sharing"
+                            target="_blank">Download
+                            now!
+                        </a>
+                    </button>
                 </p>
             </div>
             <div class="container-fluid">
-                <h1 class=" mt-5 pt-3">Preview</h1>
-
-                <p>The starting state of the menu will appear collapsed on smaller screens, and will appear
-                    non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
-                <p>
-                    Make sure to keep all page content within the
-                    <code>#page-content-wrapper</code>
-                    . The top navbar is optional, and just for demonstration. Just create an element with the
-                    <code>#sidebarToggle</code>
-                    ID which will toggle the menu when clicked.
-                </p>
-            </div>
-            <div class="container-fluid">
-                <h1 class=" mt-5 pt-3" id="add_constraints">Add constraints</h1>
-
-                <p>The starting state of the menu will appear collapsed on smaller screens, and will appear
-                    non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
-                <p>
-                    Make sure to keep all page content within the
-                    <code>#page-content-wrapper</code>
-                    . The top navbar is optional, and just for demonstration. Just create an element with the
-                    <code>#sidebarToggle</code>
-                    ID which will toggle the menu when clicked.
-                </p>
+                <h1 class=" mt-5 pt-3">Add your question bank</h1>
+                Done with filling out the excel sheet with your required questions?
+                <div class="mt-2">
+                    <form action="/generate" method="post" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label for="excel_file" class="form-label">Upload your file below</label>
+                            <input class="form-control" id="excel_file" name="excel_file" type="file"
+                                accept=".xlsx,.xls">
+                        </div>
+                        <button type="submit" class="btn btn-outline-dark btn-sm">Upload</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
