@@ -44,6 +44,21 @@
             </div>
         </nav>
     </header>
+    {% with messages = get_flashed_messages(with_categories = true) %}
+    <!-- If there are messages -->
+    {%if messages%}
+    <!-- Looping through the messages -->
+    {%for category, message in messages%}
+    {%if category == "Max marks constraint failed"%}
+    <div class="alert alert-danger alert-dismissible fade show" role="alert"
+        style="position:absolute; top:10%; width:100%; z-index: 9999;">
+        {{message}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {%endif%}
+    {%endfor%}
+    {%endif%}
+    {%endwith%}
     <div>
         {%block content%}
 
