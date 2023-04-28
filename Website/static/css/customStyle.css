@@ -30,7 +30,11 @@ a {
     border-radius: .75rem;
 }
 
-.icon{
+.icon {
     margin-bottom: 5%;
     color: #394867;
+}
+
+#team {
+    text-align: center;
 }
