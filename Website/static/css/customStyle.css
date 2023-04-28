@@ -18,7 +18,7 @@ a {
 #featured-3 {
     text-align: center;
     width: 100%;
-    height: 60vh;
+    height: 80vh;
 }
 
 .feature {
@@ -37,4 +37,8 @@ a {
 
 #team {
     text-align: center;
+}
+
+.featured-heading {
+    margin: 5% auto;
 }
