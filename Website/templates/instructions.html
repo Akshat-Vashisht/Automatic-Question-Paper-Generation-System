@@ -1,0 +1,166 @@
+{%extends "navbar.html"%}
+{%block content%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Simple Sidebar - Start Bootstrap Template</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="static/styles2.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
+        integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" crossorigin="anonymous">
+</head>
+
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="container-fluid">
+            <button class="btn " id="sidebarToggle">
+                <span class="navbar-toggler-icon" aria-hidden="true"></span>
+            </button>
+            <span class="navbar-brand mb-0 h1">Automatic Question Paper Generation System</span>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ms-auto mb-2 me-md-4">
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == '/' %}active{% endif %}" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == '/instructions' %}active{% endif %}"
+                            href="/instructions">Generate Question Paper</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == '/logout' %}active{% endif %}"
+                            href="/logout">Logout</a>
+                    </li>
+                </ul>
+            </div>
+            <a href="/profile" class="profile-icon">
+                <svg class="navbar-nav ms-auto mb-2 me-md-4 text-muted" xmlns="http://www.w3.org/2000/svg" width="30"
+                    height="30" fill="currentcolor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                    <path fill-rule="evenodd"
+                        d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                </svg>
+            </a>
+        </div>
+    </nav>
+
+    <div class="d-flex" id="wrapper">
+        <!-- Sidebar-->
+        <div class="border-end bg-white mt-3" id="sidebar-wrapper">
+            <div class="list-group list-group-flush">
+                <a class="list-group-item list-group-item-action list-group-item-light p-3"
+                    href="#General Instructions">General
+                    Instructions</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#download">Download
+                    Excel</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#Basic Details">Basic
+                    Details</a>
+            </div>
+        </div>
+        <!-- Page content wrapper-->
+        <div id="page-content-wrapper">
+            <!-- Page content-->
+            <div class="container-fluid" id="General Instructions">
+                <h1 class=" mt-3 ">General Instructions</h1>
+
+                <p>Greetings {{user.name}}, here are a few things to keep in mind before you get started with the
+                    process of generating a question paper </p>
+                <p>
+                    <i class="bi bi-arrow-right"></i>
+                    Download the <a href="#download">excel sheet template</a>
+                </p>
+                <p>
+                    <i class="bi bi-arrow-right"></i>
+                    Fill in the excel sheet with questions along with necessary details such as marks, topic, subtopic,
+                    etc.
+                <h6>Note:</h6>
+                1. Marks column should be a valid positive integer
+                <br>
+                <i class="bi bi-x ">
+                    <A>Invalid values: -2,-1,0,0.5, ...</A>
+                </i>
+                <i class="bi bi-check2">
+                    <a>Valid values: 1,2,3, ... </a>
+                </i>
+                </p>
+                2. Topic and subtopic should be a string and should have the actual name of the topic
+                <br>
+                <i class="bi bi-x ">
+                    <A>Invalid values: 6a, 5b, 2.2, 2-3, ...</A>
+                </i>
+                <i class="bi bi-check2">
+                    <a>Valid values: "Dynamic Programming", "Set Theory", "Integral Calculus", ... </a>
+                </i>
+                </p>
+                3. Difficulty level should have the actual difficulty
+                <br>
+                <i class="bi bi-x ">
+                    <A>Invalid values: e, m, h, 1, 2, 3, ...</A>
+                </i>
+                <i class="bi bi-check2">
+                    <a>Valid values: "Easy", "Medium" and "Hard" </a>
+                </i>
+                </p>
+                4. Bloom's Taxonomy
+                <br>
+                <i class="bi bi-x ">
+                    <A>Invalid values: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure, quia?.</A>
+                </i>
+                <i class="bi bi-check2">
+                    <a>Valid values: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, ullam.</a>
+                </i>
+                </p>
+
+            </div>
+            <div class="container-fluid" id="download">
+                <h1 class=" mt-5 pt-3">Download Excel</h1>
+
+                <p>Download the excel sheet format by clicking on the button given below</p>
+                <p>
+                    <button class="btn btn-outline-dark btn-sm">
+                        <a href="https://docs.google.com/spreadsheets/d/1OSex3BU6D3WxizXHyVaMp_r7fUNPTpZ_dA1YIgPpHiA/edit?usp=sharing"
+                            target="_blank">Download
+                            now!
+                        </a>
+                    </button>
+                </p>
+            </div>
+            <div class="container-fluid" id="Basic Details">
+                <h1 class=" mt-5 pt-3">Basic Details</h1>
+                Done with filling out the excel sheet with your required questions?<br>
+                Input the following details and click on next
+                <div class="mt-2">
+                    <form method="POST" enctype="multipart/form-data" action="/constraints">
+                        <div class="form-group">
+                            <label for="max_marks">Max Marks:</label>
+                            <input type="number" class="form-control" id="max_marks" name="max_marks" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="num_questions">Number of Questions:</label>
+                            <input type="number" class="form-control" id="num_questions" name="num_questions" required>
+                        </div>
+                        <button type="submit" class="btn mt-2 btn-outline-dark btn-sm">Next</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="static/js/sidebar.js"></script>
+</body>
+
+</html>
+{%endblock%}

@@ -1,0 +1,28 @@
+{% extends "navbar.html" %}
+
+{% block content %}
+<div class="container-fluid">
+    <h1 class=" mt-5 pt-3">Preview</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                {% for column in df.columns %}
+                <th>{{ column }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in df.values.tolist() %}
+            <tr>
+                {% for value in row %}
+                <td>{{ value }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<div class="d-flex justify-content-center">
+    <embed src="data:application/pdf;base64,{{ document_pdf }}" type="application/pdf" width="50%" height="600px">
+</div>
+{% endblock %}

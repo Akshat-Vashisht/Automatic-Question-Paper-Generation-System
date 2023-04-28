@@ -1,0 +1,42 @@
+{% extends "navbar.html" %}
+
+{% block content %}
+
+<div class="mt-5">
+    <form action="/generate" method="POST" enctype="multipart/form-data">
+        <div class="mt-5 pt-5">
+            <label for="excel_file" class="form-label">Upload your file below</label>
+            <input class="form-control" id="excel_file" name="excel_file" type="file" accept=".xlsx,.xls">
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group mt-5 pt-4">
+                    {% for i in range(num_questions) %}
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <label for="question_marks_{{i}}">Question {{i+1}} Marks:</label>
+                            <select class="form-control" id="question_marks_{{i}}" name="question_marks[]" required>
+                                {% for j in range(1, 11) %}
+                                <option value="{{j}}">{{j}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="question_difficulty_{{i}}">Question {{i+1}} Difficulty:</label>
+                            <select class="form-control" id="question_difficulty_{{i}}" name="question_difficulty[]"
+                                required>
+                                <option value="Easy">Easy</option>
+                                <option value="Medium">Medium</option>
+                                <option value="Hard">Hard</option>
+                            </select>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <button type="submit" class="btn btn-outline-dark ">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

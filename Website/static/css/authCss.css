@@ -1,0 +1,13 @@
+body {
+    background-color: #FFFAF1;
+}
+
+.container {
+    margin-top: 20vh;
+    text-align: center;
+    width: 20vw;
+}
+
+.form-group {
+    margin: 3%;
+}
