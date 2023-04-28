@@ -1,9 +1,13 @@
 {% extends "navbar.html" %}
 
 {% block content %}
-<div class="container-fluid">
-    <h1 class=" mt-5 pt-3">Preview</h1>
-    <table class="table">
+
+<head>
+    <link rel="stylesheet" href="../static/css/constraints.css">
+</head>
+<h1 class=" mt-5 pt-5 text-center">Preview</h1>
+<div class="flex-container">
+    <table class="table" id="preview-table">
         <thead>
             <tr>
                 {% for column in df.columns %}

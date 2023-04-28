@@ -63,14 +63,33 @@ def generate_qp():
             print(finalDf)
             pdf = FPDF()
             pdf.add_page()
-            pdf.set_font("Arial", size=14)
-            pdf.cell(200, 10, txt="MIT ADT UNIVERSITY PAPER", align="C")
+            pdf.set_font("Arial", "B", size=20)
+            pdf.cell(200, 20, txt="MIT ADT UNIVERSITY PAPER", align="C")
             pdf.ln()
+            pdf.image(name='mit.jpg', x=20, y=10, w=40, h=20)
+            pdf.set_font("Arial", "B", size=12)
+            pdf.multi_cell(200, 20, txt="General Instructions: ")
             pdf.set_font("Arial", size=12)
+            pdf.multi_cell(200, 5, txt="1) Assume suitable data if necessary")
+            pdf.multi_cell(
+                200, 5, txt="2) Use of nonprogrammable type of scientific calculator is allowed")
+            pdf.multi_cell(
+                200, 5, txt="3) Do not write anything other than the Enrolment number on the question paper")
+            pdf.multi_cell(
+                200, 5, txt="4) Figures to right indicate the marks allotted to the questions")
+            pdf.multi_cell(
+                200, 5, txt="5) Leave enough margin on all the sides and start each question on new page ")
+            pdf.cell(170, 15, txt=f"Max Marks: {max_marks}", ln=1, align='R')
+            pdf.ln()
             for i in range(0, num_questions):
                 pdf.cell(10, 10, txt=f"Q{i+1}", ln=0)
                 pdf.multi_cell(
                     160, 10, txt=f" {finalDf['Question'][i]} ({finalDf['Marks'][i]})")
+
+            pdf.set_line_width(0.5)
+            pdf.set_draw_color(0, 0, 0)
+            pdf.line(10, 90, 180, 90)
+            pdf.line(10, 35, 180, 35)
 
             pdf_bytes = pdf.output(dest='S').encode('latin1')
             pdf_base64 = base64.b64encode(pdf_bytes).decode('utf-8')

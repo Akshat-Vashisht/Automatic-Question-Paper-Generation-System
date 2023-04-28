@@ -6,3 +6,8 @@
     display: flex;
     justify-content: center;
 }
+
+#preview-table{
+    width: 70vw;
+}
+
