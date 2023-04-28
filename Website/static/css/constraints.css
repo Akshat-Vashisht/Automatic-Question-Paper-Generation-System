@@ -1,0 +1,9 @@
+#constraints {
+    width: 60vw;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+
+}

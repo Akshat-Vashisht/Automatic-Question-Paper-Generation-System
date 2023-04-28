@@ -42,8 +42,8 @@ def basic_details():
 def generate_qp():
     if request.method == "POST":
         file = request.files.get("excel_file")
-        question_marks = request.form.getlist("question_marks[]")
-        question_difficulty = request.form.getlist("question_difficulty[]")
+        question_marks = request.form.getlist("question_marks")
+        question_difficulty = request.form.getlist("question_difficulty")
         df = pd.read_excel(file)
         finalDf = pd.DataFrame()
         max_marks = session.get("max_marks")

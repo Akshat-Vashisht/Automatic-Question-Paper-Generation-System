@@ -1,0 +1,16 @@
+#wrapper {
+    margin-top: 3%;
+}
+
+#page-content-wrapper {
+    margin-top: 1%;
+    width: 100%;
+}
+
+.form-group {
+    display: inline-block;
+}
+
+.next-button {
+    display: block;
+}
