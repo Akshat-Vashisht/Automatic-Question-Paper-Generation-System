@@ -44,7 +44,12 @@ def generate_qp():
         file = request.files.get("excel_file")
         question_marks = request.form.getlist("question_marks[]")
         question_difficulty = request.form.getlist("question_difficulty[]")
-        df = pd.read_excel(file)
+        try:
+            df = pd.read_excel(file)
+        except ValueError:
+            flash("Excel file not found",
+                  category="Excel not found")
+            return redirect(url_for("views.question_paper"))
         finalDf = pd.DataFrame()
         max_marks = session.get("max_marks")
         num_questions = session.get("num_questions")

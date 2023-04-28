@@ -49,7 +49,7 @@
     {%if messages%}
     <!-- Looping through the messages -->
     {%for category, message in messages%}
-    {%if category == "Max marks constraint failed"%}
+    {%if category == "Max marks constraint failed" or category == "Excel not found"%}
     <div class="alert alert-danger alert-dismissible fade show" role="alert"
         style="position:absolute; top:10%; width:100%; z-index: 9999;">
         {{message}}
